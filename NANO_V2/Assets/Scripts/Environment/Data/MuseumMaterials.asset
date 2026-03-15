@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 673d8b34de185144caf75dd2b3457d53, type: 3}
+  m_Name: MuseumMaterials
+  m_EditorClassIdentifier: 
+  marmol: {fileID: 0}
+  alfombra: {fileID: 0}
+  madera: {fileID: 0}
+  labMetal: {fileID: 0}
+  labSurface: {fileID: 0}
+  labFloor: {fileID: 0}
+  displayFont: {fileID: 0}
+  bodyFont: {fileID: 0}
+  carpetTint: {r: 0.12, g: 0.1, b: 0.12, a: 1}
+  stageCurtainColor: {r: 0.35, g: 0.05, b: 0.08, a: 1}
+  stageTrimColor: {r: 0.82, g: 0.74, b: 0.6, a: 1}
+  labMetalColor: {r: 0.74, g: 0.78, b: 0.82, a: 1}
+  labAccentColor: {r: 0.15, g: 0.6, b: 0.9, a: 1}
+  goldNanoColor: {r: 1, g: 0.78, b: 0.2, a: 1}
+  bioSafetyColor: {r: 1, g: 0.8, b: 0.1, a: 1}
+  glassColor: {r: 0.3, g: 0.8, b: 1, a: 0.3}
+  holoGridColor: {r: 0, g: 0.7, b: 1, a: 0.4}
+  holoEmissionColor: {r: 0, g: 1, b: 1, a: 1}
+  holoEmissionIntensity: 2.5
+  holoTextColor: {r: 0.75, g: 0.95, b: 1, a: 1}
+  holoBioLightColor: {r: 0.2, g: 0.8, b: 1, a: 1}
+  paperColor: {r: 0.97, g: 0.97, b: 0.93, a: 1}
+  bannerColor: {r: 0, g: 0, b: 0, a: 1}
+  bannerTextColor: {r: 1, g: 1, b: 1, a: 1}
+  lightColor: {r: 1, g: 1, b: 0.9, a: 1}
+  nanoAuraColor: {r: 0.3, g: 0.8, b: 1, a: 0.18}
+  nanoLightColor: {r: 0.3, g: 0.9, b: 1, a: 1}

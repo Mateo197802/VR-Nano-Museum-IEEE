@@ -1,0 +1,73 @@
+{
+  "bannerText": "LABORATORIO DE NANOTECNOLOGIA IEEE",
+  "scientists": [
+    {
+      "id": 1,
+      "shortName": "Feynman",
+      "fullName": "Richard Feynman",
+      "bio": "Richard Feynman\n(1918-1988)\n\nPionero del orden atomico.\nPropuso la vision de\nmanipular la materia\natomo por atomo."
+    },
+    {
+      "id": 2,
+      "shortName": "Taniguchi",
+      "fullName": "Norio Taniguchi",
+      "bio": "Norio Taniguchi\n(1912-1999)\n\nAcuno el termino\nnanotecnologia en 1974.\nImpulso la precision\nultra fina en manufactura."
+    },
+    {
+      "id": 3,
+      "shortName": "Iijima",
+      "fullName": "Sumio Iijima",
+      "bio": "Sumio Iijima\n(1939 - Presente)\n\nDescubrio los nanotubos\nde carbono en 1991.\nBase de materiales\nultra resistentes."
+    },
+    {
+      "id": 4,
+      "shortName": "Drexler",
+      "fullName": "K. Eric Drexler",
+      "bio": "K. Eric Drexler\n(1955 - Presente)\n\nImpulso la vision de\nnanotecnologia molecular\ny sistemas de ensamblaje\nautonom."
+    },
+    {
+      "id": 5,
+      "shortName": "Binnig",
+      "fullName": "Gerd Binnig",
+      "bio": "Gerd Binnig\n(1947 - Presente)\n\nCo-invento el microscopio\nde tunel (STM), clave\npara visualizar atomos\nindividuales."
+    },
+    {
+      "id": 6,
+      "shortName": "Dresselhaus",
+      "fullName": "Mildred Dresselhaus",
+      "bio": "Mildred Dresselhaus\n(1930-2017)\n\nPionera en nanocarbono\ny grafito. Su trabajo\nsentó las bases del\ngrafeno."
+    }
+  ],
+  "nanoTopics": [
+    {
+      "id": 1,
+      "title": "NANOMEDICINA",
+      "description": "Tratamiento con precision\ncelular y entrega dirigida\nde farmacos inteligentes\na zonas tumorales."
+    },
+    {
+      "id": 2,
+      "title": "NANOTUBOS DE CARBONO",
+      "description": "Cilindros de carbono con\nresistencia extrema y\nconductividad superior\na cualquier metal."
+    },
+    {
+      "id": 3,
+      "title": "GRAFENO",
+      "description": "Lamina de un solo atomo\nde espesor con fuerza y\nconductividad increibles\npara electronica flexible."
+    },
+    {
+      "id": 4,
+      "title": "AUTOENSAMBLAJE",
+      "description": "Organizacion autonoma de\nmoleculas en estructuras\nordenadas y complejas\nsin intervencion humana."
+    },
+    {
+      "id": 5,
+      "title": "NANOSENSORES",
+      "description": "Deteccion ultra sensible\nde gases, biomarcadores\ny cambios del entorno\na escala molecular."
+    },
+    {
+      "id": 6,
+      "title": "PUNTOS CUANTICOS",
+      "description": "Emision y control de luz\nen nanoescala para\nimagenes medicas y\ndisplays de alta calidad."
+    }
+  ]
+}

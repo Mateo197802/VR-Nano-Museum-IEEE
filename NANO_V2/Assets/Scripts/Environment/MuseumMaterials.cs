@@ -77,5 +77,19 @@ namespace VRNanoProject.Environment
         [Header("Colores — Nanopartículas")]
         public Color nanoAuraColor  = new Color(0.30f, 0.80f, 1.00f, 0.18f);
         public Color nanoLightColor = new Color(0.30f, 0.90f, 1.00f, 1.00f);
+
+        // ── Prefabs de Laboratorio ───────────────────────────────────────
+        [Header("Modelos 3D Importados (Prefabs)")]
+        [Tooltip("Prefab para la mesa de trabajo (ej. Chemistry Table)")]
+        public GameObject prefabLabBench;
+        
+        [Tooltip("Prefab de microscopio o equipo de medición")]
+        public GameObject prefabMicroscope;
+        
+        [Tooltip("Prefab de matraz, beaker o tubo de ensayo")]
+        public GameObject prefabFlask;
+        
+        [Tooltip("Prefab decorativo (ej. Pipetas, Centrífuga)")]
+        public GameObject prefabLabProp;
     }
 }

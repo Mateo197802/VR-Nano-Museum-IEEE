@@ -47,8 +47,9 @@ namespace VRNanoProject.Environment
 
         [Header("Manual UI")]
         public Vector3 manualPosition  = new Vector3(0f, 3.4f, 30f);
-        public Vector3 manualRotation  = new Vector3(0f, 180f, 0f);
-        public Vector2 manualSize      = new Vector2(620f, 360f);
+        public Vector3 manualRotation  = new Vector3(0f, 0f, 0f); // Antes estaba en 180, causando que el texto se viera al revés
+        public Vector2 manualSize      = new Vector2(500f, 280f); // Reducido para que no sea inmenso
+        public float   manualScale     = 0.008f; // Nueva variable para controlar el tamaño en WorldSpace
         public Color   manualPanelColor = new Color(0.05f, 0.08f, 0.1f, 0.85f);
         public Color   manualTextColor  = new Color(0.9f, 0.95f, 1f, 1f);
         public Font    manualFont;
@@ -179,6 +180,13 @@ namespace VRNanoProject.Environment
             root.transform.SetParent(parent, false);
             root.transform.localPosition = position;
 
+            if (mats && mats.prefabLabBench)
+            {
+                var instance = Instantiate(mats.prefabLabBench, root.transform, false);
+                instance.transform.localPosition = Vector3.zero;
+                return root.transform;
+            }
+
             var metal = CreateLabMetal(mats, 0.6f, 0.4f);
             var top   = CreateLabSurface(mats, 0.35f, 0.25f);
 
@@ -206,8 +214,16 @@ namespace VRNanoProject.Environment
 
             for (int i = 0; i < positions.Length; i++)
             {
-                CreatePrimitive(PrimitiveType.Cylinder, "Reagent_Bottle", positions[i], new Vector3(0.18f, 0.28f, 0.18f), glass, bench);
-                CreatePrimitive(PrimitiveType.Cylinder, "Reagent_Liquid", positions[i] + new Vector3(0, -0.05f, 0), new Vector3(0.16f, 0.18f, 0.16f), i % 2 == 0 ? goldGlow : cyanGlow, bench, false, false);
+                if (mats && mats.prefabFlask)
+                {
+                    var instance = Instantiate(mats.prefabFlask, bench, false);
+                    instance.transform.localPosition = positions[i];
+                }
+                else
+                {
+                    CreatePrimitive(PrimitiveType.Cylinder, "Reagent_Bottle", positions[i], new Vector3(0.18f, 0.28f, 0.18f), glass, bench);
+                    CreatePrimitive(PrimitiveType.Cylinder, "Reagent_Liquid", positions[i] + new Vector3(0, -0.05f, 0), new Vector3(0.16f, 0.18f, 0.16f), i % 2 == 0 ? goldGlow : cyanGlow, bench, false, false);
+                }
             }
         }
 
@@ -259,12 +275,19 @@ namespace VRNanoProject.Environment
 
         private void CreateNanoDrops(Vector3 position, MuseumMaterials mats, Transform parent)
         {
-            var metal  = CreateLabMetal(mats, 0.5f, 0.4f);
-            var accent = CreateLabSurface(mats, 0.4f, 0.3f);
-
             var root = new GameObject("NanoDrops_Station");
             root.transform.SetParent(parent, false);
             root.transform.localPosition = position;
+
+            if (mats && mats.prefabMicroscope)
+            {
+                var instance = Instantiate(mats.prefabMicroscope, root.transform, false);
+                instance.transform.localPosition = Vector3.zero;
+                return;
+            }
+
+            var metal  = CreateLabMetal(mats, 0.5f, 0.4f);
+            var accent = CreateLabSurface(mats, 0.4f, 0.3f);
 
             CreatePrimitive(PrimitiveType.Cube,     "NanoDrops_Base",   new Vector3(0, 0.4f, 0),       new Vector3(1.6f, 0.8f, 1.1f), metal, root.transform);
             CreatePrimitive(PrimitiveType.Cube,     "NanoDrops_Screen", new Vector3(0, 0.9f, -0.45f),  new Vector3(1.2f, 0.5f, 0.08f), accent, root.transform, false, false);
@@ -319,10 +342,12 @@ namespace VRNanoProject.Environment
             canvasGo.transform.SetParent(parent, false);
             canvasGo.transform.localPosition = position;
             canvasGo.transform.localRotation = Quaternion.Euler(rotation);
+            canvasGo.transform.localScale    = new Vector3(manualScale, manualScale, manualScale);
 
             var canvas = canvasGo.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.WorldSpace;
-            canvasGo.AddComponent<CanvasScaler>().dynamicPixelsPerUnit = 10f;
+            var scaler = canvasGo.AddComponent<CanvasScaler>();
+            scaler.dynamicPixelsPerUnit = 30f; // Mejor calidad de texto
             canvasGo.AddComponent<GraphicRaycaster>();
 
             var panel = new GameObject("Panel");
